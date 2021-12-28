@@ -14,25 +14,8 @@
           <Property Name="pista" Type="varchar" MaxLength="8000" Nullable="false" />
           <Property Name="palabra" Type="varchar" MaxLength="8000" Nullable="false" />
         </EntityType>
-        <EntityType Name="Personajes">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Ranking">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="puntuacion" Type="numeric" Precision="4" Scale="2" />
-        </EntityType>
         <EntityContainer Name="ModelAhorcandoDevsStoreContainer">
           <EntitySet Name="Juego" EntityType="Self.Juego" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Personajes" EntityType="Self.Personajes" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Ranking" EntityType="Self.Ranking" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -48,25 +31,8 @@
           <Property Name="pista" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="palabra" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityType Name="Personajes">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Ranking">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="puntuacion" Type="Decimal" Precision="4" Scale="2" />
-        </EntityType>
         <EntityContainer Name="EntitiesAhorcandoDevs" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Juego" EntityType="Self.Juego" />
-          <EntitySet Name="Personajes" EntityType="Self.Personajes" />
-          <EntitySet Name="Ranking" EntityType="Self.Ranking" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -81,23 +47,6 @@
                 <ScalarProperty Name="historia" ColumnName="historia" />
                 <ScalarProperty Name="pista" ColumnName="pista" />
                 <ScalarProperty Name="palabra" ColumnName="palabra" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Personajes">
-            <EntityTypeMapping TypeName="ModelAhorcandoDevs.Personajes">
-              <MappingFragment StoreEntitySet="Personajes">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Ranking">
-            <EntityTypeMapping TypeName="ModelAhorcandoDevs.Ranking">
-              <MappingFragment StoreEntitySet="Ranking">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

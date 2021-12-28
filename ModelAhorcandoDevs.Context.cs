@@ -26,7 +26,5 @@ namespace WcfService_ahorcando_devs
         }
     
         public virtual DbSet<Juego> Juego { get; set; }
-        public virtual DbSet<Personajes> Personajes { get; set; }
-        public virtual DbSet<Ranking> Ranking { get; set; }
     }
 }

@@ -83,7 +83,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContracRanking.cs" />
     <Compile Include="Juego.cs">
       <DependentUpon>ModelAhorcandoDevs.tt</DependentUpon>
     </Compile>
@@ -101,12 +100,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelAhorcandoDevs.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Personajes.cs">
-      <DependentUpon>ModelAhorcandoDevs.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Ranking.cs">
-      <DependentUpon>ModelAhorcandoDevs.tt</DependentUpon>
     </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>

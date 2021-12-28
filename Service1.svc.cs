@@ -33,59 +33,5 @@ namespace WcfService_ahorcando_devs
             return juego;
         }
 
-        public IEnumerable<Personajes> GetPersonajes()
-        {
-            IEnumerable<Personajes> personajes;
-            using ( var bd = new EntitiesAhorcandoDevs()) { 
-                personajes = bd.Personajes.ToList();
-            }
-            return personajes;
-        }
-
-        public IEnumerable<Ranking> GetRanking()
-        {
-            IEnumerable<Ranking> ranking;
-            using (var bd = new EntitiesAhorcandoDevs())
-            {
-                ranking = bd.Ranking.ToList();
-
-            }
-            return ranking;
-        }
-        
-
-        public bool IsCorrect(string palabra)
-        {
-            bool correct ;
-
-            using (var bd = new EntitiesAhorcandoDevs())
-            {
-                correct = bd.Juego.Select(x=> x.palabra.ToUpper() == palabra.ToUpper()).Any();
-            }
-
-            return correct;
-        }
-
-        public void SetDataRanking(ContracRanking ranking)
-        {
-            if (ranking == null)
-            {
-                throw new ArgumentNullException("ranking");
-            }
-
-            using (var bd = new EntitiesAhorcandoDevs())
-            {
-                var rnk = new Ranking()
-                {
-                    nombre = ranking.nombre,
-                    puntuacion = ranking.puntuacion,
-                };
-
-                bd.Ranking.Add(rnk);
-
-                bd.SaveChanges();
-            }
-
-        }
     }
 }

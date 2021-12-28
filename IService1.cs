@@ -21,21 +21,6 @@ namespace WcfService_ahorcando_devs
         // obtener pregunta
         Juego Getgame(int id);
 
-        [OperationContract]
-        // validar palabra
-        bool IsCorrect(string palabra);
-
-        [OperationContract]
-        // listar personajes
-        IEnumerable<Personajes> GetPersonajes();
-
-        [OperationContract]
-        // listar Ranking
-        IEnumerable<Ranking> GetRanking();
-
-
-        [OperationContract]
-        void SetDataRanking(ContracRanking ranking);
 
     }
 }
